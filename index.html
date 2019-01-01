@@ -1,78 +1,10 @@
 <html lang="ru">
 
 <head>
-	<title>Cлaйдep</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Cлaйдep</title>
 </head>
-<style>
-	#main {
-		position: relative;
-		margin: 100px auto;
-		padding: 5px;
-		width: 660px;
-		height: 360px;
-		background-color: silver;
-		border: 5px solid grey;
-		border-radius: 15px;
-	}
-
-	#scr {
-		margin: 20px auto;
-		width: 600px;
-		height: 320px;
-		margin-top: 20px;
-		background-color: white;
-		background-size: cover;
-		border: 2px solid black;
-		border-radius: 10px;
-	}
-
-	button {
-		position: absolute;
-		top: 150px;
-		width: 25px;
-		height: 70px;
-		font: 12pt arial, tahoma, sans-serif;
-		text-align: center;
-	}
-
-	.left {
-		left: 5px;
-	}
-
-	.right {
-		right: 5px;
-	}
-</style>
-
-<script>
-	var slider = {
-		slides: ['5.jpg', ' 10.jpg', '15.jpg', '20.jpg'],
-		frame: 0,
-		set: function(image) {
-			document.getElementById("scr").style.backgroundImage = "url(" + image + ")";
-		},
-		init: function() {
-			this.set(this.slides[this.frame]);
-		},
-		left: function() {
-			this.frame--;
-			if (this.frame < 0) this.frame = this.slides.length - 1;
-			this.set(this.slides[this.frame]);
-		},
-		right: function() {
-			this.frame++;
-			if (this.frame == this.slides.length) this.frame = 0;
-			this.set(this.slides[this.frame]);
-		}
-	};
-	window.onload = function() {
-		slider.init();
-		setInterval(function() {
-			slider.right();
-		}, 5000);
-	};
-</script>
 
 <body>
 
@@ -81,6 +13,7 @@
 		<div id="scr"></div>
 	<button class="right" onclick="slider.right();">></button>
 	</div>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
